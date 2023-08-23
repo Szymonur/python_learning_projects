@@ -30,6 +30,7 @@ while len(guessed_states) < 50:
         # Save not guessed to csv "learn.csv"
         states_list = set(states_data.state.to_list())
         not_guessed = states_list.difference(guessed_states)
+        # not_guessed = [state for state in states_list if state not in guessed_states]
         df = pandas.DataFrame(not_guessed)
         df.to_csv("learn.csv")
         break
